@@ -4,7 +4,6 @@ import KanbanColumn from "./KanbanColumn";
 import Header from "./Header";
 
 // Import icons for priority grouping
-
 import highIcon from "../assests/High.svg";
 import mediumIcon from "../assests/Medium.svg";
 import lowIcon from "../assests/Low.svg";
@@ -84,27 +83,32 @@ const KanbanBoard = () => {
       {/* Dropdown Menu */}
       {showDropdown && (
         <div className="dropdown">
-          <div className="dropdown-item">
-            <label>Grouping:</label>
-            <select
-              className="dropdown-select"
-              onChange={(e) => setGrouping(e.target.value)}
-            >
-              <option value="status">Status</option>
-              <option value="user">User</option>
-              <option value="priority">Priority</option>
-            </select>
-          </div>
-          <div className="dropdown-item">
-            <label>Ordering:</label>
-            <select
-              className="dropdown-select"
-              onChange={(e) => setSortOption(e.target.value)}
-            >
-              <option value="">None</option>
-              <option value="priority">Priority</option>
-              <option value="title">Title</option>
-            </select>
+          <div className="dropdown-card">
+            {/* Grouping Dropdown Card */}
+            <div className="dropdown-item">
+              <label>Grouping:</label>
+              <select
+                className="dropdown-select"
+                onChange={(e) => setGrouping(e.target.value)}
+              >
+                <option value="status">Status</option>
+                <option value="user">User</option>
+                <option value="priority">Priority</option>
+              </select>
+            </div>
+
+            {/* Ordering Dropdown Card */}
+            <div className="dropdown-item">
+              <label>Ordering:</label>
+              <select
+                className="dropdown-select"
+                onChange={(e) => setSortOption(e.target.value)}
+              >
+                <option value="">None</option>
+                <option value="priority">Priority</option>
+                <option value="title">Title</option>
+              </select>
+            </div>
           </div>
         </div>
       )}
